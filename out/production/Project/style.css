@@ -1,0 +1,9 @@
+code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  padding: 2px;
+  font-size: 10.5pt;
+}
+code code {
+  color: green;
+}

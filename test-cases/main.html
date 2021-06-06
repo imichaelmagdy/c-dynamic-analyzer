@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dynamic Analyzer</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<style type="text/css">
+		body {padding-left: 10vh; padding-right: 10vh;}
+		pre code {color: firebrick;}
+		pre code code {color: green;}
+		pre samp {font-weight: 500;}
+		.jumbotron {background: none;}
+	</style>
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid vertical-center">
+<div class="container">
+	<div class="row"><h6>This is the output of compiling <code>main.c</code> passing arguments <code>[13, 3]</code>:</h6></div>
+	<br>
+	<div class="row  pre-scrollable card bg-light">
+		<div class="col-md-auto card-body">
+<pre><code>#include &lt;stdio.h&gt;
+
+int add(int x, int y);
+
+int main(int argc, char *argv[])
+{
+<code>    int x = (int) strtol(argv[1], NULL, 10);</code>
+<code>    int y = (int) strtol(argv[2], NULL, 10);</code>
+<code></code>
+<code>    int testInteger = add(x, y);</code>
+<code></code>
+<code>    if (testInteger &gt;= 0)</code>
+<code>    {</code>
+<code>        printf("The result is a positive number!\n");</code>
+<code>    } else {</code>
+        printf("The result is a negative number!\n");
+<code>    }</code>
+<code></code>
+<code>    if (testInteger &gt;= 5)</code>
+<code>    {</code>
+<code>        int m = testInteger % 5;</code>
+<code>        switch(m)</code>
+<code>        {</code>
+            case 0:
+                printf("5 divides %d", testInteger);
+                break;
+            default:
+<code>                printf("%d modulo 5 is equal to %d", testInteger, m);</code>
+<code>                break;</code>
+<code>        }</code>
+<code>    }</code>
+<code>    return 0;</code>
+}
+
+int add(int x, int y)
+{
+<code>    return x+y;</code>
+}
+</code></pre>
+		</div>
+    </div>
+    <br>
+    <div class="row  pre-scrollable card bg-light" style="max-height: 15vh""><div class="col-md-auto card-body"><pre><samp>The result is a positive number!
+16 modulo 5 is equal to 1</samp></pre></div></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>
