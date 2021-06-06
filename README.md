@@ -22,3 +22,11 @@ Example:
 File name: prime
 Arguments: 13
 ```
+
+## Output
+
+A HTML file in the `/test-cases` directory having the same name as the C source code file, containing:
+* The name of the C source code file.
+* The input arguments.
+* The executed lines **highlighted in green** and the non-executed ones highlighted in red.
+* The actual output of the C source code passing that specific arguments.
